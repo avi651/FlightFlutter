@@ -13,13 +13,13 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     on<ThemeEvent>((event, emit){
       switch (event.theme) {
         case AppTheme.darkTheme:
-          emit(ThemeState(themeData: darkTheme));
+          emit(ThemeState(themeData: creamTheme));
           break;
         case AppTheme.lightTheme:
           emit(ThemeState(themeData: creamTheme));
           break;
         case AppTheme.spaceTheme:
-          emit(ThemeState(themeData: spaceTheme));
+          emit(ThemeState(themeData: creamTheme));
           break;
         default:
           emit(ThemeState(themeData: creamTheme));

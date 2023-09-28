@@ -4,6 +4,7 @@ import 'package:flight_app/core/common/buttons/rounded_button.dart';
 import 'package:flight_app/core/common/buttons/text_button.dart';
 import 'package:flight_app/core/common/textfields/bordered_textfield.dart';
 import 'package:flight_app/core/widgets/divider_widget.dart';
+import 'package:flight_app/presentation/Tabbar/flight_tab_bar.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -46,6 +47,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   buttonTxt: "Sign in with otp",
                   onPressed: () {
                     print("Button Clicked");
+                    // Navigator.pushNamed(context, Flg);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FlightTabBar(),
+                        ));
                   },
                 ),
                 const SizedBox(
@@ -83,8 +90,24 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-                RoundedButton(
-                    imageName: "assets/images/facebook.png", onPressed: () {}),
+                const SizedBox(
+                  height: 32.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RoundedButton(
+                        iconsName: "assets/images/facebook.png",
+                        onPressed: () {}),
+                    RoundedButton(
+                        iconsName: "assets/images/apple.png", onPressed: () {}),
+                  ],
+                ),
+                const SizedBox(
+                  height: 32.0,
+                ),
+                TextCommonButton(
+                    buttonTxt: "Continue as guest", onPressed: () {}),
               ],
             ),
           ),

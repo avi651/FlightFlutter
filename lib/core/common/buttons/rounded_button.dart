@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
-  final String? imageName;
+  final String? iconsName;
   final VoidCallback onPressed;
   const RoundedButton(
-      {super.key, required this.imageName, required this.onPressed});
+      {super.key, required this.iconsName, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +14,9 @@ class RoundedButton extends StatelessWidget {
         onPressed: () {},
         style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
-            //backgroundColor: Colors.white,
+            backgroundColor: Colors.white,
             fixedSize: const Size(60, 60)),
-        child: const Icon(Icons.add_circle_outline),
+        child: Image.asset(iconsName ?? ""),
       ),
     );
   }
